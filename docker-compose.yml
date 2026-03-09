@@ -1,0 +1,50 @@
+version: "3.8"
+
+services:
+  nginx-geo:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nginx-geo
+    ports:
+      - "8080:80"
+      - "8443:443"
+    volumes:
+      # Mount your site content
+      - ./html:/usr/share/nginx/html:ro
+      # Override configs without rebuilding
+      - ./nginx/geo-headers.conf:/etc/nginx/conf.d/geo-headers.conf:ro
+      - ./nginx/robots-llms.conf:/etc/nginx/conf.d/robots-llms.conf:ro
+      - ./nginx/ai-crawler-rate-limit.conf:/etc/nginx/conf.d/ai-crawler-rate-limit.conf:ro
+      # Logs
+      - ./logs:/var/log/nginx
+    environment:
+      - NGINX_ENVSUBST_OUTPUT_DIR=/etc/nginx/conf.d
+      - TZ=UTC
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/robots.txt"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    networks:
+      - geo-network
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+networks:
+  geo-network:
+    driver: bridge
+
+# Optional: add your backend service
+# services:
+#   app:
+#     image: your-app:latest
+#     networks:
+#       - geo-network
+#     expose:
+#       - "3000"
