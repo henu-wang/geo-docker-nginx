@@ -61,6 +61,27 @@ AI Crawler Request
     -> AI engine indexes and cites your content
 ```
 
+## Related Projects
+
+| Repository | Description |
+|------------|-------------|
+| [awesome-geo](https://github.com/henu-wang/awesome-geo) | Curated list of GEO resources |
+| [WordPress GEO Optimizer](https://github.com/henu-wang/wordpress-geo-optimizer) | WordPress plugin |
+| [Next.js GEO Starter](https://github.com/henu-wang/nextjs-geo-starter) | Next.js template |
+| [Nuxt GEO Module](https://github.com/henu-wang/nuxt-geo-module) | Nuxt 3 module |
+| [GEO Case Studies](https://github.com/henu-wang/geo-case-studies) | Real-world case studies |
+| [AI Search Readiness Framework](https://github.com/henu-wang/ai-search-readiness-framework) | 11-signal evaluation |
+| [GEO Scoring Methodology](https://github.com/henu-wang/geo-scoring-methodology) | How GEO scores work |
+| [llms.txt Examples](https://github.com/henu-wang/llms-txt-examples) | llms.txt templates |
+| [GEO Config Examples](https://github.com/henu-wang/geo-config-examples) | Configuration examples |
+| [GEO Badge Generator](https://github.com/henu-wang/geo-badge-generator) | Badge/shield generator |
+| [AI Crawlers Reference](https://github.com/henu-wang/ai-crawlers-reference) | AI crawler documentation |
+| [GEO Checklist](https://github.com/henu-wang/geo-checklist) | Implementation checklist |
+| [SEO + GEO Toolkit](https://github.com/henu-wang/seo-geo-toolkit) | Python tools |
+| [GEO WordPress Themes](https://github.com/henu-wang/geo-wordpress-themes) | Theme snippets |
+
+Scan your website's GEO score for free at [GEOScore](https://geoscoreai.com).
+
 ## License
 
 MIT
